@@ -1,0 +1,4 @@
+﻿  Day5.cpp
+E:\Archive\Advent of code\Day5\Day5\Day5.cpp(106,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day5\Day5\Day5.cpp(167,23): warning C4018: '<': signed/unsigned mismatch
+  Day5.vcxproj -> E:\Archive\Advent of code\Day5\Debug\Day5.exe

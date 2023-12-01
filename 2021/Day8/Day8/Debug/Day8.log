@@ -1,0 +1,13 @@
+﻿  Day8.cpp
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(50,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(65,27): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(88,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(101,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(118,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(125,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(132,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(149,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(192,23): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(222,27): warning C4018: '<': signed/unsigned mismatch
+E:\Archive\Advent of code\Day8\Day8\Day8.cpp(231,23): warning C4018: '<': signed/unsigned mismatch
+  Day8.vcxproj -> E:\Archive\Advent of code\Day8\Debug\Day8.exe
