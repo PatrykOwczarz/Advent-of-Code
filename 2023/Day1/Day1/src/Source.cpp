@@ -4,18 +4,13 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <map>
 
 using namespace std;
 
 vector<string> input;
-vector<int> intInput;
 
-void convertToInt() {
-    for (string i : input) {
-        int num = atoi(i.c_str());
-        intInput.push_back(num);
-    }
-}
+// function to read each line of input and store it in a string input vector
 
 void readInput() {
     fstream inputFile;
@@ -34,9 +29,10 @@ void readInput() {
 
 }
 
+// Part 1 solution, convert each individual string character to int and work out if its an integer in the range 1-9.
+// Construct a number string which can be used to find the first and last digits.
 
 void solveChallenge1() {
-    readInput();
     char ch;
     string number = "";
     vector<int> sum;
@@ -60,11 +56,13 @@ void solveChallenge1() {
         }
     }
 
+    // sums the total value for the answer.
+
     int total = 0;
     for (int i : sum) {
         total += i;
     }
-    cout << total << endl;
+    cout << "Answer to part 1: " << total << endl;
 
 }
 
@@ -74,101 +72,75 @@ void solveChallenge1() {
 // like this -> eight -> e8t, so if the edge case eighthree occurrs -> you get e8three -> e8t3e and can parse the 8 and 3 like in part 1.
 
 void solveChallenge2() {
-    readInput();
-    //int digits[10];
-    vector<int> sums;
-    char ch;
-    int intFirst = 0;
-    int intLast = 0;
 
+    // map used to map the int to its string version.
+
+    map<int, string> wordToInt;
+    wordToInt[1] = "one";
+    wordToInt[2] = "two";
+    wordToInt[3] = "three";
+    wordToInt[4] = "four";
+    wordToInt[5] = "five";
+    wordToInt[6] = "six";
+    wordToInt[7] = "seven";
+    wordToInt[8] = "eight";
+    wordToInt[9] = "nine";
+
+    vector<int> sum;
+
+    // for each line of input, find each version the written number and convert it to its int version whilst leaving
+    // the first and last character in case the edge case is present as described above the solveChallenge2 method.
+    // example: my first line was threerznlrhtkjp23mtflmbrzq395three, on a first pass the algorithm will change the first "three" to "t3e"
+    // threerznlrhtkjp23mtflmbrzq395three -> t3erznlrhtkjp23mtflmbrzq395three -> t3erznlrhtkjp23mtflmbrzq395t3e is the final string.
     for (string s : input) {
+        for (int i = 1; i < 10; i++) {
+            
+            while (s.find(wordToInt[i]) != string::npos) {
+                int pos = s.find(wordToInt[i]);
+                s.replace(pos+1, wordToInt[i].size() - 2, to_string(i));
+                //cout << s << endl;
+            }
+        }
 
-        intFirst = s.size();
-        intLast = 0;
+        // same code below as part 1
+
+        char ch;
+        string number = "";
 
         for (int i = 0; i < s.size(); i++) {
             ch = s[i];
             if (((int)ch - 48) < 10) {
-                if (intFirst > i) {
-                    intFirst = i;
-                }
-                if (intLast < i) {
-                    intLast = i;
-                }
+                number = number + ch;
             }
         }
-
-        int digits[10];
-        
-        for (int i = 0; i < 10; i++) {
-           digits[i] = 0;
-        }
-
-        
-        digits[1] = s.find("one");
-        digits[2] = s.find("two");
-        digits[3] = s.find("three");
-        digits[4] = s.find("four");
-        digits[5] = s.find("five");
-        digits[6] = s.find("six");
-        digits[7] = s.find("seven");
-        digits[8] = s.find("eight");
-        digits[9] = s.find("nine");
-        
-        
-        int first = 1; int last = 1;
-        int firstIndex = s.size(); int lastIndex = 0;
-        for (int i = 1; i < 10; i++) {
-            if (digits[i] == -1) {
-
-            }
-            else {
-                if (digits[i] < firstIndex) {
-                    firstIndex = digits[i];
-                    first = i*10;
-                }
-                if (digits[i] > lastIndex) {
-                    lastIndex = digits[i];
-                    last = i;
-                }
-            } 
-        }
-        int numToPush = 0;
-
-        if (firstIndex < intFirst) {
-            numToPush = first;
+        if (number.size() == 1) {
+            number = number + number;
+            sum.push_back(stoi(number));
+            //cout << stoi(number) << endl;
         }
         else {
-            numToPush = stoi(s.substr(intFirst, 1)) * 10;
+            string temp = number.substr(0, 1) + number.substr(number.size() - 1, 1);
+            sum.push_back(stoi(temp));
+            //cout << stoi(temp) << endl;
         }
-
-        if (lastIndex > intLast) {
-            numToPush += last;
-        }
-        else {
-            numToPush += stoi(s.substr(intLast, 1));
-        }
-
-        //cout << "min: " << first << ", max: " << last << endl;
-        cout << numToPush << endl;
-        sums.push_back(numToPush);
-
 
     }
-    
+
+    // sums the total value for the answer.
+
     int total = 0;
-    for (int i : sums) {
-        total += i;
+    for (int i = 0; i < sum.size(); i++) {
+        total += sum[i];
     }
 
-    cout << total << endl;
-
+    cout << "Answer to part 2: " << total << endl;
 
 }
 
 int main()
 {
-    //solveChallenge1();
+    readInput();
+    solveChallenge1();
     solveChallenge2();
     return 0;
 }

@@ -1,13 +1,3 @@
 ﻿  Source.cpp
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(81,28): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(103,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(104,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(105,36): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(106,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(107,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(108,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(109,36): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(110,36): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(111,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(115,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\Archive\Advent of Code\2023\Day1\Day1\src\Source.cpp(99,47): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Day1.vcxproj -> E:\Archive\Advent of Code\2023\Day1\x64\Debug\Day1.exe
