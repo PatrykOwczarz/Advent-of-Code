@@ -37,13 +37,13 @@ void SolveChallenge1() {
         string currentString = input[i];
         
         if (i < 10) {
-            currentString.erase(currentString.begin(), currentString.begin() + 7);
+            currentString.erase(currentString.begin(), currentString.begin() + 9);
         }
         else if (i >= 100) {
             currentString.erase(currentString.begin(), currentString.begin() + 9);
         }
         else {
-            currentString.erase(currentString.begin(), currentString.begin() + 8);
+            currentString.erase(currentString.begin(), currentString.begin() + 9);
         }
         //cout << currentString << endl;
 
@@ -83,11 +83,33 @@ void SolveChallenge1() {
             }
             
         }
+        sum = 0;
+        for (int i = 0; i < playNumbers.size(); i++) {
+            for (int j = 0; j < winningNumbers.size(); j++) {
+                if (playNumbers[i] == winningNumbers[j]) {
+                    if (sum == 0) {
+                        sum = 1;
+                    }
+                    else {
+                        sum = sum * 2;
+                    }
+                }
+            }
+        }
+        if (sum > 0) {
+            points.push_back(sum);
+        }
+        playNumbers.clear();
+        winningNumbers.clear();
 
-        // write algorithm that compares winning numbers to player numbers and does the doubling each time they match.
         
     }
+    sum = 0;
+    for (int i : points) {
+        sum += i;
+    }
 
+    cout << "Answer for part 1: " << sum << endl;
 }
 
 
